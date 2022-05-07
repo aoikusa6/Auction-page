@@ -1,0 +1,296 @@
+/*----- Reset css default & set general style -----*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #1b1f1a;
+  --light-green: #5dcc26;
+  --dark-green: #7df840;
+  --white: #ffffff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+p {
+  margin: 0.75rem 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.theme--normal {
+  background-color: var(--black);
+  color: var(--dark-green);
+}
+
+i{
+  color: var(--dark-green);
+}
+
+/*----- User info style -----*/
+
+.user-info__list--primary p {
+  color: var(--white);
+}
+
+.fa-inverse {
+  color: var(--black);
+}
+
+/*----- Logo & navbar style -----*/
+nav {
+  justify-content: space-between;
+}
+
+.logo p {
+  color: var(--light-green);
+}
+
+nav a,
+nav a:visited {
+  color: var(--black);
+}
+
+.logo__container {
+  margin: auto 0;
+}
+
+.nav-bar__list {
+  font-size: 1.125rem;
+}
+
+/*----- Hero & total style -----*/
+main p {
+  opacity: 50%;
+}
+
+.hexagon {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem 2rem;
+  border: none;
+
+  --btn-raise: 2rem;
+  clip-path: polygon(
+    var(--btn-raise) 0%,
+    calc(100% - var(--btn-raise)) 0%,
+    100% 50%,
+    calc(100% - var(--btn-raise)) 100%,
+    var(--btn-raise) 100%,
+    0 50%
+  );
+  background-color: var(--black);
+  text-transform: uppercase;
+}
+
+.total__title {
+  float: left;
+  color: var(--white);
+}
+.total__time {
+  float: right;
+  color: var(--dark-green);
+}
+main span {
+  color: var(--dark-green);
+  float: right;
+}
+
+.more-info {
+  flex-wrap: wrap;
+}
+
+.hero {
+  padding-bottom: 1rem;
+}
+/*----- Showcase & sidebar style -----*/
+.carousel {
+  margin-top: 1rem;
+}
+
+.showcase__info > h1 {
+  font-size: 1.25rem;
+  width: 100%;
+  opacity: 50%;
+}
+
+.showcase__info > h1:hover {
+  border-bottom: 2px solid var(--light-green);
+  opacity: 100%;
+}
+
+.sidebar {
+  align-self: flex-start;
+}
+
+.sidebar__time {
+  background-color: silver;
+  border-radius: 2px;
+  padding: 1rem;
+}
+.sidebar__time > p {
+  opacity: 100%;
+  text-align: right;
+}
+
+.sidebar__info {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.sidebar__info > p {
+  padding: 0.5rem 0;
+  opacity: 100%;
+  color: var(--white);
+}
+
+form {
+  display: flex;
+  padding: 2px;
+}
+
+input {
+  height: 2rem;
+  color: var(--white);
+  flex-grow: 2;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input:focus {
+  outline: none;
+}
+
+form button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0;
+  width: fit-content;
+}
+
+.submit {
+  background-color: var(--dark-green);
+  color: var(--black);
+}
+
+/*----- Comment section style -----*/
+
+.comment {
+  position: relative;
+}
+
+textarea {
+  font-size: 1rem;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.comment__submit {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 4rem;
+  width: 4rem;
+  background: var(--dark-green);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.comment__submit > i{
+  color: var(--black);
+}
+
+
+/*----- Footer style -----*/
+footer a,
+footer a:visited {
+  color: var(--white);
+}
+
+footer h1,
+footer p {
+  color: var(--white);
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about > div {
+  width: 50%;
+}
+
+@media (min-width: 900px) {
+  .user-info,
+  nav,
+  .hero,
+  .showcase {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .hero__info,
+  .showcase__image {
+    width: 66%;
+  }
+
+  .total,
+  .sidebar {
+    width: 33%;
+  }
+
+  .showcase__info h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .showcase__info h1 {
+    font-size: 2rem;
+  }
+  .about > div {
+    width: 25%;
+  }
+}
